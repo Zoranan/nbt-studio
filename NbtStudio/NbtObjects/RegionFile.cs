@@ -14,7 +14,7 @@ namespace NbtStudio
     {
         public const int ChunkXDimension = 32;
         public const int ChunkZDimension = 32;
-        private static readonly Regex CoordsRegex = new Regex(@"^r\.(?<x>-?[0-9]+)\.(?<z>-?[0-9]+)");
+        private static readonly Regex CoordsRegex = new Regex(@"^r\.(?<x>-?[0-9]+)\.(?<z>-?[0-9]+)", RegexOptions.Compiled);
         public RegionCoords Coords
         {
             get
@@ -24,7 +24,7 @@ namespace NbtStudio
                 var match = CoordsRegex.Match(System.IO.Path.GetFileNameWithoutExtension(Path));
                 if (!match.Success)
                     return null;
-                return new RegionCoords(int.Parse(match.Groups["x"].Value), int.Parse(match.Groups["z"].Value));
+                return new (int.Parse(match.Groups["x"].Value), int.Parse(match.Groups["z"].Value));
             }
         }
         public int ChunkCount { get; private set; }
