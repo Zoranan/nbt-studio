@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "NbtConsole": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\Will\\AppData\\Roaming\\.minecraft\\saves\\Random 2\\region\\r.0.0.mca\""
+    }
+  }
+}
